@@ -7,10 +7,11 @@ app.get("/api/whoami", function(req, res){
        language: req.headers["accept-language"],
        software: req.headers["user-agent"]
    };
+   
   res.end(JSON.stringify(response));
     // res.end(req.headers);
 });
 
-app.listen(8080, function(){
+app.listen(process.env.PORT, function(){
     console.log("server is actived!");
 })
